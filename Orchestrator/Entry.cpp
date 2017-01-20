@@ -14,7 +14,7 @@ void main()
 	const char* Name = "NovoOne";
 	RobotSyncController->Init(Name);
 
-	VrSyncController *VrSyncControllerInst = new VrSyncController("127.0.0.1", "27015");
+	VrSyncController *VrSyncControllerInst = new VrSyncController("192.168.1.10", "81");
 
 	while (1)
 	{
