@@ -43,9 +43,9 @@ EVrEvent VrSyncController::DecodeEvent(char(&Buffer)[DEFAULT_BUFLEN])
 void VrSyncController::HandleEvent(EVrEvent Event)
 {
 	switch (Event) {
-	case EVrEvent::VrReady:
-		OnVrReady();
-		break;
+		case EVrEvent::VrReady:
+			OnVrReady();
+			break;
 	}
 };
 

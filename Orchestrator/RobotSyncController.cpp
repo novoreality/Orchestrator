@@ -6,7 +6,7 @@ std::map<const char*, uint8_t> RobotIdMappings = { { "NovoOne", 10 } };
 
 bool FRobotSyncController::Init(const char* RobotId)
 {
-	RobotConn = new FDeviceNet(); // Eventually may want to make this configurable
+	FDeviceNet *RobotConn = new FDeviceNet(); // Eventually may want to make this configurable
 	uint8_t MacId = RobotIdMappings[RobotId];
 	if (!RobotConn->CreateConnection(this, MacId)) {
 		return false;
@@ -54,6 +54,9 @@ void FRobotSyncController::HandleEvent(ERobotEvent Event)
 	switch (Event) {
 		case ERobotEvent::RobotReady :
 			OnRobotReady();
+			break;
+		case ERobotEvent::NoEvent :
+			SetIsReady(false);
 			break;
 	}
 };
