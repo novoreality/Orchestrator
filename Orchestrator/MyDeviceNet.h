@@ -37,7 +37,7 @@ static dnsWriteDeviceIo DNS_WriteDeviceIo;
 class FDeviceNet
 {
 public:
-	bool CreateConnection(FRobotSyncController *inController, uint8_t MacId);
+	bool CreateConnection(uint8_t MacId);
 	bool SendData(elementSize(&Data)[ELEMENT_NUMBER]);
 	bool CloseConnection();
 	bool ReadData(elementSize(&Buffer)[ELEMENT_NUMBER]);
@@ -53,6 +53,5 @@ private:
 	bool UnRegisterDeviceEvent();
 	void PreventEStop(elementSize(&Data)[ELEMENT_NUMBER]);
 
-	FRobotSyncController *Controller;
 	bool Connected;
 };

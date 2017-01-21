@@ -40,9 +40,8 @@ void FDeviceNet::LoadDLL()
 	DNS_WriteDeviceIo = (dnsWriteDeviceIo)GetProcAddress(hGetProcIDDLL, "DNS_WriteDeviceIo");
 }
 
-bool FDeviceNet::CreateConnection(FRobotSyncController *inController, uint8_t MacId)
+bool FDeviceNet::CreateConnection(uint8_t MacId)
 {
-	Controller = inController;
 
 	LoadDLL();
 
