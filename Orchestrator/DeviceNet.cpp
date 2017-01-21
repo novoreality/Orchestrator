@@ -223,7 +223,7 @@ bool FDeviceNet::ReadData(elementSize (&Buffer)[ELEMENT_NUMBER])
 
 void FDeviceNet::PreventEStop(elementSize(&Data)[ELEMENT_NUMBER])
 {
-	Data[0] |= 1 >> (BIT_ESTOP_ROBOT - 1);
+	Data[0] |= 253 >> 0;
 }
 
 
